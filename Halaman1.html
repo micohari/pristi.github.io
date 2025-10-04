@@ -70,15 +70,10 @@
     <img src="YourImg.jpg" alt="Foto"> 
     <div class="typing-text" id="typing"></div>
 
-   <video id="myVideo">
-    <source src="Backsound.mp4" type="video/mp4">
-    Your browser does not support the video element.
-</video>
 
-
-    <audio id="audioPlayer" autoplay muted>
-  <source src="Backsound.mp3" type="audio/mp3">
-  Browser Anda tidak mendukung elemen audio.
+     <audio id="myAudio">
+    <source src="Backsound.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
 </audio>
 
 
@@ -86,6 +81,7 @@
 
     <!-- Tombol WhatsApp -->
     <button id="whatsapp-button" onclick="window.location.href='https://wa.me/6285895188073?text=Terimakasih'">Reply to message</button>
+    <button id="audioButton" class="audio-button">Play/Pause</button>
 
     <script>
         const texts = [
@@ -135,13 +131,19 @@ typeText(); // Mulai animasi mengetik
     </script>
 
 <script>
-  window.onload = function() {
-    var audio = document.getElementById('audioPlayer');
-    // Setelah 0.1 detik, mute dihapus dan audio tetap dimainkan
-    setTimeout(function() {
-      audio.muted = false;
-    }, 100); // 100ms delay untuk memastikan autoplay terjadi
-  };
+    const audio = document.getElementById('myAudio');
+const button = document.getElementById('audioButton');
+
+button.addEventListener('click', () => {
+    if (audio.paused) {
+        audio.play();
+        button.textContent = "Pause"; // Change button text
+    } else {
+        audio.pause();
+        button.textContent = "Play"; // Change button text
+    }
+});
+
 </script>
     
 </body>
