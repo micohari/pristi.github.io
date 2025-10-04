@@ -5,6 +5,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Happy Birthday</title>
     <style>
+
+.audio-button {
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    padding: 12px 24px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.audio-button:hover {
+    background-color: #45a049; /* Darker Green */
+}
+
+.audio-button:active {
+    background-color: #388e3c; /* Even Darker Green */
+}
+        
         body {
             font-family: Arial, sans-serif;
             display: flex;
@@ -81,7 +104,7 @@
 
     <!-- Tombol WhatsApp -->
     <button id="whatsapp-button" onclick="window.location.href='https://wa.me/6285895188073?text=Terimakasih'">Reply to message</button>
-    <button id="audioButton" class="audio-button">Play/Pause</button>
+    <button id="audioButton" class="audio-button">Play</button>
 
     <script>
         const texts = [
