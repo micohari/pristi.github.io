@@ -75,6 +75,15 @@
     Your browser does not support the video element.
 </video>
 
+
+    <audio id="audioPlayer" autoplay muted>
+  <source src="Backsound.mp3" type="audio/mp3">
+  Browser Anda tidak mendukung elemen audio.
+</audio>
+
+
+
+
     <!-- Tombol WhatsApp -->
     <button id="whatsapp-button" onclick="window.location.href='https://wa.me/6285895188073?text=Terimakasih'">Reply to message</button>
 
@@ -125,5 +134,15 @@ function typeText() {
 typeText(); // Mulai animasi mengetik
     </script>
 
+<script>
+  window.onload = function() {
+    var audio = document.getElementById('audioPlayer');
+    // Setelah 0.1 detik, mute dihapus dan audio tetap dimainkan
+    setTimeout(function() {
+      audio.muted = false;
+    }, 100); // 100ms delay untuk memastikan autoplay terjadi
+  };
+</script>
+    
 </body>
 </html>
